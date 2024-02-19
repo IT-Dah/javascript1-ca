@@ -251,6 +251,9 @@ h5 {
 
 /* Checkout Page */
 
+.checkout-main {
+}
+
 @media screen and (max-width: 1200px) {
   main {
     grid-template-columns: 1fr 1fr 1fr;
