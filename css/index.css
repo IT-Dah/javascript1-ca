@@ -239,16 +239,18 @@ h5 {
   margin-bottom: 100px;
 }
 
+.checkout-main h2 {
+  text-align: center;
+}
+
 .input-group {
   margin-bottom: 7px;
   width: 100%;
-  position: relative;
 }
 
 .input-box {
   width: 100%;
   margin: 7px;
-  position: relative;
 }
 
 .payment-method {
@@ -256,11 +258,12 @@ h5 {
 }
 
 .payment-method label {
+  margin-bottom: 7px;
   background-color: #f6f6f6cc;
   color: grey;
   text-shadow: none;
-  width: 100%;
-  padding: 13px;
+  width: 50%;
+  padding: 10px;
   display: inline-block;
   text-align: center;
   border: 1px solid;
@@ -274,7 +277,15 @@ h5 {
 
 .input-box button {
   width: 100%;
-  padding: 13px;
+  padding: 10px;
+}
+
+.input-box select {
+  margin-bottom: 7px;
+  display: inline-block;
+  text-align: center;
+  width: 49%;
+  padding: 7px;
 }
 
 .name {
@@ -293,6 +304,7 @@ h5 {
 
 .radio {
   display: none;
+  margin: 0;
 }
 
 /* About Us */
