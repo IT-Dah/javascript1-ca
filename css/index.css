@@ -252,10 +252,41 @@ h5 {
 /* Checkout Page */
 
 .checkout-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 100px;
+}
+
+.input-group {
+  margin-bottom: 7px;
+  width: 100%;
+}
+
+.input-box {
+  width: 100%;
+}
+
+.input-box:last-child {
+  margin-right: 0;
+}
+
+.name {
+  padding: 7px;
+  width: 100%;
+  border: 1px solid #0a3641;
+  outline: none;
+  transition: 0.3s;
+  border-radius: 3px;
+  background-color: #f6f6f6;
+}
+
+.name:focus {
+  color: #000000;
 }
 
 @media screen and (max-width: 1200px) {
-  main {
+  .product-details {
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 0.1fr 2fr 2fr 1fr 1fr;
   }
