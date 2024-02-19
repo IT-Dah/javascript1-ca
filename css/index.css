@@ -1,0 +1,307 @@
+/* Color palette
+
+Background  #F6F6F6
+Frames      #3C6E6F
+Logo        #0A3641
+*/
+
+header {
+  padding: 0.2rem;
+  background-color: #f6f6f6cc;
+  color: #0a3641;
+}
+
+.top-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 0.7rem;
+  padding-bottom: 0.2rem;
+}
+
+.top-nav {
+  display: flex;
+  justify-content: space-around;
+  padding: 0%;
+  font-size: 1.2rem;
+  list-style: none;
+}
+
+/* Add a responsive search bar
+
+.fa-magnifying-glass{
+}
+
+*/
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  max-height: 8%;
+  padding: 3px;
+  background-color: #f6f6f6;
+  font-size: 0.8rem;
+  font-family: "Open Sans", sans-serif;
+  color: #0a3641;
+  text-align: center;
+  text-shadow: 0px 1px 1px #0a3641cc;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 0%;
+  padding: 0%;
+  list-style: none;
+}
+
+body {
+  height: 100%;
+  margin: 0%;
+  padding: 0%;
+  background-image: url(https://i.ibb.co/zxXS03D/bg-mountain1.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  font-family: "Open Sans", sans-serif, serif;
+  color: white;
+  text-shadow: 0px 1px 1px #0a3641cc;
+  padding-bottom: 1rem;
+}
+
+/* Links*/
+
+a {
+  color: #0a3641;
+}
+
+a:hover {
+  color: #3c6e6fcc;
+  text-decoration: none;
+}
+
+a:active {
+  color: #0a3641;
+}
+
+/* Fonts */
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-shadow: 0px 1px 1px #0a3641cc;
+  text-align: center;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  text-shadow: 0px 1px 1px #0a3641cc;
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-shadow: 0px 1px 1px #0a3641cc;
+}
+
+h4 {
+  font-size: 1rem;
+  font-weight: bold;
+  text-shadow: 0px 1px 1px #0a3641cc;
+}
+
+h5 {
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-shadow: 0px 1px 1px #0a3641cc;
+}
+
+/*Home Page*/
+
+.intro {
+  padding-top: 1%;
+  padding-bottom: 0.2%;
+  text-align: center;
+  text-shadow: 0px 1px 1px #0a3641cc;
+}
+
+.special-word {
+  color: #ca8773;
+}
+
+.for-them {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 0%;
+  background-color: #f6f6f6;
+  font-size: 0.8em;
+  list-style: none;
+}
+
+.pic-gallery {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: fit-content;
+  padding: 2rem 3.2rem 7rem;
+}
+
+.gallery-container {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  overflow-x: scroll;
+  width: 85%;
+  border-right: 1px solid #0a3641;
+  border-left: 1px solid #0a3641;
+  white-space: nowrap;
+}
+
+.gallery-container img {
+  max-width: 49%;
+}
+
+/* About Us */
+
+.about-us {
+  margin: 0%;
+  padding-top: 5%;
+  padding-right: 15%;
+  padding-left: 15%;
+  text-align: left;
+  text-shadow: 0px 1px 1px #0a3641cc;
+}
+
+.about-us article {
+  font-size: 1.5rem;
+}
+
+.start-shopping {
+  padding-top: 3%;
+  padding-right: 15%;
+  text-align: right;
+}
+
+/* Listed Products Page */
+
+#our-jackets {
+  color: #000000;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  margin: 5px 30px 80px;
+  justify-content: center;
+  grid-gap: 2rem;
+}
+
+#our-jackets img {
+  max-width: 250px;
+}
+.jacket-display {
+  display: flex;
+  background-color: #f6f6f6;
+  justify-content: center;
+  padding-right: 1px;
+}
+
+/* Product Details Page */
+
+.product-details {
+  display: grid;
+  grid-template-columns: 5% 30% 5% 20% 30%;
+  grid-template-rows: 5% 15% 10% 20% 10% 5% 5% 5% 5%;
+}
+
+.product-text {
+  grid-row: 2;
+  grid-column: 5;
+  text-align: left;
+  text-shadow: 0px 1px 1px #0a3641cc;
+  grid-column: 5;
+}
+
+.big-photo {
+  grid-row: 2;
+  grid-column: 2;
+}
+
+.smaller-photos {
+  grid-row: 2;
+  grid-column: 4;
+}
+
+.smaller-photos img {
+  padding-bottom: 0.35rem;
+}
+
+.specify-order {
+  grid-row: 5;
+  grid-column: 5;
+}
+
+.specify-order p {
+  font-weight: bold;
+}
+
+/* Checkout Page */
+
+@media screen and (max-width: 1200px) {
+  main {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 0.1fr 2fr 2fr 1fr 1fr;
+  }
+
+  .product-text {
+    grid-column: 2;
+    grid-row: 4;
+    text-align: center;
+    text-shadow: 0px 1px 1px #0a3641cc;
+  }
+
+  .big-photo {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .smaller-photos {
+    grid-column: 2;
+    grid-row: 3;
+    max-width: 40%;
+    padding-left: 31%;
+  }
+
+  .specify-order {
+    text-align: center;
+    grid-column: 2;
+    grid-row: 5;
+  }
+
+  .pic-gallery {
+    margin: auto;
+  }
+
+  .gallery-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    justify-content: center;
+    align-content: center;
+    overflow-x: hidden;
+    grid-column: 1;
+    max-width: 100%;
+    border-right: none;
+    border-left: none;
+  }
+
+  .gallery-container img {
+    display: block;
+    max-width: 80%;
+    margin: auto;
+  }
+}
