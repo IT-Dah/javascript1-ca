@@ -5,13 +5,34 @@ export const API_RAINYDAYS_URL = `${API_BASE_URL}/rainy-days`;
 import {doFetch} from './doFetch.js';
 
 
+
+function createCart () {
+  const cart = localStorage.getItem('cart');
+  if (!cart) {
+    localStorage.setItem('cart', JSON.stringify([]));
+  }
+}
+
+// Steps for add to cart:
+// 1.Check if jacket is added to cart
+// If added, increment "quantity" by 1
+// Else add the jacket
+
+function addToCart(jacket) {
+  console.log('Add to cart', jacket);
+}
+ 
+
+
 function generateJacketHtml(jacket) {
     
     const jacketDisplay = document.createElement('div');
     jacketDisplay.classList.add('jacket-display');
 
     const jacketImage = document.createElement('img');
-    //Image.classList.add('jacket-image');
+    jacketImage.src = jacket.image.url;
+    jacketImage.alt = jacket.title;
+    jacketImage.classList.add('jacket-image');
 
     const productInfo = document.createElement('div');
     productInfo.classList.add('product-info');
@@ -28,8 +49,16 @@ function generateJacketHtml(jacket) {
     const jacketDiscountedPrice = document.createElement('div');
     jacketDiscountedPrice.textContent = jacket.discountedPrice;
 
+    const jacketBuyButton = document.createElement('button');
+    jacketBuyButton.textContent = 'Buy';
+    jacketBuyButton.classList.add('jacket-buy-button');
+    jacketBuyButton.addEventListener('click',() => {
+      addToCart(jacket);
+      console.log('id', jacket.id)
+    })
+
     jacketPriceContainer.append(jacketPrice, jacketDiscountedPrice);
-    jacketDisplay.append(heading, jacketImage, productInfo, jacketPriceContainer);
+    jacketDisplay.append(heading, jacketImage, productInfo, jacketPriceContainer, jacketBuyButton);
 
     return jacketDisplay;
 };   
@@ -48,6 +77,8 @@ function displayJackets(jackets) {
 
 
 async function main() {
+
+    createCart();
 
     const responseData = await doFetch(API_RAINYDAYS_URL);
     const jackets = responseData.data;
