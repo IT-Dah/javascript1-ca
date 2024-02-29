@@ -5,7 +5,7 @@ export const API_RAINYDAYS_URL = `${API_BASE_URL}/rainy-days`;
 import {doFetch} from './doFetch.js';
 
 
-
+// 
 function createCart () {
   const cart = localStorage.getItem('cart');
   if (!cart) {
@@ -13,15 +13,27 @@ function createCart () {
   }
 }
 
-// Steps for add to cart:
-// 1.Check if jacket is added to cart
-// If added, increment "quantity" by 1
-// Else add the jacket
-
 function addToCart(jacket) {
-  console.log('Add to cart', jacket);
+
+  const cart = JSON.parse (localStorage.getItem('cart'))
+  const itemIndex = cart.findIndex(function (currentJacket) {
+      if (jacket.id === currentJacket.id) {
+        return true;
+      }
+      return false;
+  });
+  
+  if (itemIndex === -1) {
+    cart.push({...jacket, quantity: 1 });
+  } else {
+    cart [itemIndex].quantity += 1;
+  }
+
+  localStorage.setItem('cart', JSON.stringify(cart));
+  
 }
  
+
 
 
 function generateJacketHtml(jacket) {
