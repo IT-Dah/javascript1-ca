@@ -2,9 +2,16 @@ const API_BASE_URL = "https://v2.api.noroff.dev";
 
 export const API_RAINYDAYS_URL = `${API_BASE_URL}/rainy-days`;
 
-import {doFetch} from './doFetch.mjs';
+import { addToCart, clearCart } from './cart.mjs';
+import { doFetch } from './doFetch.mjs';
 
-function createCart () {
+
+const clearCartButton = document.getElementById('clear-cart');
+clearCartButton.addEventListener('click', () => {
+  clearCart();
+});
+
+function createCart() {
   const cart = localStorage.getItem('cart');
   if (!cart) {
     localStorage.setItem('cart', JSON.stringify([]));
