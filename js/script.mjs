@@ -5,13 +5,48 @@ export const API_RAINYDAYS_URL = `${API_BASE_URL}/rainy-days`;
 import {doFetch} from './doFetch.js';
 
 
-// 
+
+
+function generateHtmlforJacket(jacket) {
+  const jacketWrapper = document.createElement('div');
+  
+  const jacketTitle = document.createElement('h3');
+  jacketTitle.textContent = jacket.title;
+
+  const jacketQuantity = document.createElement('div');
+  jacketQuantity.textContent = game.jacketQuantity;
+
+  const jacketPrice = document.createElement ('div');
+  jacketPrice.textContent = jacket.price;
+
+  const jacketPriceTotal = document.createElement ('div');
+  jacketPriceTotal.textContent = jacket.price * jacket.quantity;
+
+  jacketWrapper.append(jacketTitle, jacketQuantity, jacketPrice, jacketPriceTotal);
+  return jacketWrapper;
+}
+
+
+function displayCartItems() {
+ 
+  const displayContainer = document.getElementById('cart-items-display')
+  const cart = JSON.parse(localStorage.getItem('cart'));
+  
+  cart.forEach(function (currentJacket) {
+      const itemHTML = generateHtmlforJacket(currentJacket)
+  });
+}
+
+
+
+ 
 function createCart () {
   const cart = localStorage.getItem('cart');
   if (!cart) {
     localStorage.setItem('cart', JSON.stringify([]));
   }
 }
+
 
 function addToCart(jacket) {
 
