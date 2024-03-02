@@ -25,10 +25,8 @@ export function addToCart(jacket) {
 export function removeFromCart(jacket) {
 
     const cart = getCart();
-    console.log('Decrement og remove product');
     
     const jacketIdToRemove = jacket.id;
-    console.log("Jacket id to remove", jacketIdToRemove);
 
     const idInCart = cart.findIndex(currentItem => {
         if (currentItem.id === jacketIdToRemove) {
@@ -55,5 +53,4 @@ export function removeFromCart(jacket) {
 
 export function clearCart() {
     localStorage.setItem('cart', JSON.stringify([]));
-    console.log('Cart has been cleared');
 }

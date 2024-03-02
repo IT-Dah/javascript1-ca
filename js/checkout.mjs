@@ -4,6 +4,7 @@ import { formatCurrency } from './formatCurrency.mjs';
 const clearCartButton = document.getElementById('clear-cart');
 clearCartButton.addEventListener('click', () => {
     clearCart();
+    displayCartItems();
 });
 
 function generateHtmlForJacket(jacket) {
