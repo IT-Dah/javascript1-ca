@@ -172,8 +172,14 @@ h5 {
 
 /* Listed Products Page */
 
+#clear-cart {
+  margin: 5px 30px;
+  max-width: 150px;
+  max-height: 24px;
+}
+
 #jacket-display {
-  color: #f6f6f6;
+  color: #000000;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   margin: 5px 30px 80px;
@@ -184,8 +190,6 @@ h5 {
 #jacket-display img {
   max-width: 250px;
 }
-
-/* Before javascript
 
 .jacket-display {
   display: flex;
@@ -198,7 +202,7 @@ h5 {
   max-height: 30px;
   margin: 3px 7px;
   text-transform: uppercase;
-} */
+}
 
 /* Product Details Page */
 

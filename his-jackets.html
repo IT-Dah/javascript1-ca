@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="description" content="we sell quality rain jackets" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script type="module" src="./js/script.js"></script>
+    <script type="module" src="./js/jackets.js"></script>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
@@ -42,14 +42,14 @@
       <h1>For Him</h1>
       <div>
         <label for="filter"></label>
+        <button id="clear-cart">Clear Cart</button>
         <select name="jacket-filter" id="jacket-filter">
           <option value="filter">-Filter-</option>
           <option value="on sale">On Sale</option>
-          <option value="gender">Gender</option>
           <option value="most sold">Most Sold</option>
         </select>
       </div>
-      <section id="our-jackets"></section>
+      <section id="jacket-display"></section>
     </main>
     <footer>
       <nav>

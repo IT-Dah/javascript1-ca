@@ -1,8 +1,12 @@
 import { API_RAINYDAYS_URL } from './constants.mjs';
 import { doFetch } from './doFetch.mjs';
+import { addToCart, clearCart } from './cart.mjs';
 
+const clearCartButton = document.getElementById('clear-cart');
+clearCartButton.addEventListener('click', () => {
+    clearCart();
+});
 
-// CART CONTENT:
 function createCart() {
 
     const cart = localStorage.getItem('cart');
@@ -10,33 +14,6 @@ function createCart() {
       localStorage.setItem('cart', JSON.stringify([]));
     }
 }
-
-function addToCart(jacket) {
-
-    const cart = JSON.parse(localStorage.getItem('cart'));
-
-    const itemIndex = cart.findIndex(function (currentJacket) {
-        console.log(currentJacket);
-        if (jacket.id === currentJacket.id) {
-            return true;
-        }
-        return false;
-    });
-
-    if (itemIndex === -1) {
-        cart.push({...jacket, quantity: 1 });
-    } else {
-        cart[itemIndex].quantity += 1;
-    }
-    localStorage.setItem('cart', JSON.stringify(cart));
-}
-
-function clearCart() {
-    localStorage.setItem('cart', JSON.stringify([]));
-}
-
-
-
 
 // JACKET PAGE CONTENT:
 function generateJacketHtml(jacket) {

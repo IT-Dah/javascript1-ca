@@ -1,3 +1,10 @@
+import { addToCart, clearCart, removeFromCart } from './cart.mjs';
+
+const clearCartButton = document.getElementById('clear-cart');
+clearCartButton.addEventListener('click', () => {
+    clearCart();
+});
+
 function generateHtmlForJacket(jacket) {
     const jacketDisplay = document.createElement('div');
     
@@ -17,8 +24,27 @@ function generateHtmlForJacket(jacket) {
   
     const jacketPriceTotal = document.createElement ('div');
     jacketPriceTotal.textContent = 'Total: ' + jacket.price * jacket.quantity;
+
+    const quantityAdjustmentContainer = document.createElement('div');
+
+    const incrementButton = document.createElement('button');
+    incrementButton.textContent = "+";
+    incrementButton.addEventListener('click', () => {
+        console.log('Increment the total');
+        addToCart(jacket);
+        displayCartItems();
+    })
+
+    const decrementButton = document.createElement('button');
+    decrementButton.textContent = "-";
+    decrementButton.addEventListener('click', () => {
+        removeFromCart(jacket);
+
+    })
+
+    quantityAdjustmentContainer.append(incrementButton, decrementButton);
   
-    jacketDisplay.append(jacketTitle, jacketImage, jacketQuantity, jacketPrice, jacketPriceTotal);
+    jacketDisplay.append(jacketTitle, jacketImage, jacketQuantity, jacketPrice, jacketPriceTotal, quantityAdjustmentContainer);
 
     return jacketDisplay;
   }
@@ -27,12 +53,12 @@ function generateHtmlForJacket(jacket) {
 function displayCartItems () {
 
     const displayContainer = document.getElementById('cart-items-display');
+    displayContainer.textContent = '';
     const cart = JSON.parse(localStorage.getItem('cart'));
     
     cart.forEach(function (currentItem) {
 
         const itemHtml = generateHtmlForJacket(currentItem);
-
         displayContainer.appendChild(itemHtml);
     });
 }
@@ -41,6 +67,5 @@ function displayCartItems () {
 function main() {
     displayCartItems();
 }
-
 
 main();
