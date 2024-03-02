@@ -11,6 +11,5 @@ export async function doFetch(url, options = {}) {
       console.log(error);
       throw error;
     } finally {
-      // Do cleanups here
     }
   }
