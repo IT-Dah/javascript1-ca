@@ -1,8 +1,6 @@
 import { API_RAINYDAYS_URL } from './constants.mjs';
 import { doFetch } from './doFetch.mjs';
 
-//import { createCart, addToCart, clearCart } from './cart.mjs';
-
 
 // CART CONTENT:
 function createCart() {
@@ -32,7 +30,6 @@ function addToCart(jacket) {
     }
     localStorage.setItem('cart', JSON.stringify(cart));
 }
-
 
 function clearCart() {
     localStorage.setItem('cart', JSON.stringify([]));
@@ -98,55 +95,6 @@ async function main() {
     const jackets = responseData.data;
     displayJackets(jackets);
 
-    //createCart();
-    //displayCartItems ();
   }
 
   main();
-
-
-
-  /*
-    
-    ,jacketBuyButton);
-    
-    jacketDisplay.appendChild(productInfo);
-  
-      
-
-const clearCartButton = document.getElementById('clear-cart');
-clearCartButton.addEventListener('click', () => {
-  clearCart();
-});
-
-
-
-function generateHtmlForJacket(jacket) {
-  const jacketDisplay = document.createElement('div');
-  
-  const jacketTitle = document.createElement('h3');
-  jacketTitle.textContent = jacket.title;
-
-  const jacketQuantity = document.createElement('div');
-  jacketQuantity.textContent = 'Quantity: ' + jacket.quantity;
-
-  const jacketPrice = document.createElement ('div');
-  jacketPrice.textContent = 'Price: ' + jacket.price;
-
-  const jacketPriceTotal = document.createElement ('div');
-  jacketPriceTotal.textContent = 'Total: ' + jacket.price * jacket.quantity;
-
-  jacketDisplay.append(jacketTitle, jacketQuantity, jacketPrice, jacketPriceTotal);
-  return jacketDisplay;
-}
-
-function displayCartItems() {
-  const displayContainer = document.getElementById('cart-items-display');
-  const cart = JSON.parse(localStorage.getItem('cart'));
-  
-  cart.forEach(function (currentItem) {
-      const itemHTML = generateHtmlForJacket(currentItem);
-      displayContainer.appendChild(itemHTML);
-  });
-}
-*/

@@ -252,6 +252,25 @@ h5 {
   text-align: center;
 }
 
+#cart-items-display {
+  text-align: center;
+  padding: 20px 10px 30px;
+  color: #000000;
+  text-shadow: none;
+  background-color: #f6f6f6;
+  border-radius: 5px;
+}
+
+#cart-items-display h3 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-shadow: 0px 1px 1px #0a3641cc;
+}
+
+#cart-items-display img {
+  max-width: 20%;
+}
+
 .input-group {
   margin-bottom: 7px;
   width: 100%;

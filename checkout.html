@@ -1,132 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="description" content="we sell quality rain jackets" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <script type="module" src="./js/jackets.js"></script>
-        <link
-          rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-        />
-        <link rel="stylesheet" type="text/css" href="css/index.css" />
-        <title>Rainydays | Checkout</title>
-      </head>
-      <body>
-        <header>
-          <nav>
-            <div class="top-logo">
-              <img
-                src="https://i.ibb.co/XxXx8pm/rd-logo.png"
-                alt="rainydays logo"
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="we sell quality rain jackets" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="module" src="./js/checkout.mjs"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <title>Rainydays | Checkout</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="top-logo">
+          <img
+            src="https://i.ibb.co/XxXx8pm/rd-logo.png"
+            alt="rainydays logo"
+          />
+        </div>
+        <ul class="top-nav">
+          <li>
+            <i class="fa-solid fa-house"></i
+            ><span><a href="index.html">Home</a></span>
+          </li>
+          <li>
+            <i class="fa-solid fa-magnifying-glass"></i><span>Search</span>
+          </li>
+          <li><i class="fa-solid fa-user"></i><span>Page</span></li>
+          <li><i class="fa-solid fa-heart"></i><span>Favorites</span></li>
+          <li>
+            <i class="fa-solid fa-cart-shopping"></i
+            ><span><a href="checkout.html">Cart</a></span>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <div class="checkout-main">
+        <h1>Checkout</h1>
+        <form action="/submit" method="post" enctype="multipart/form-data">
+          <h2>Shopping Cart</h2>
+          <div id="cart-items-display">
+            <button id="clear-cart">Clear Cart</button>
+          </div>
+          <h2>Shipping Address</h2>
+          <div class="input-group">
+            <div class="input-box">
+              <input
+                type="text"
+                placeholder="First Name"
+                required
+                class="name"
+                autofocus
               />
             </div>
-            <ul class="top-nav">
-              <li>
-                <i class="fa-solid fa-house"></i
-                ><span><a href="index.html">Home</a></span>
-              </li>
-              <li>
-                <i class="fa-solid fa-magnifying-glass"></i><span>Search</span>
-              </li>
-              <li><i class="fa-solid fa-user"></i><span>Page</span></li>
-              <li><i class="fa-solid fa-heart"></i><span>Favorites</span></li>
-              <li>
-                <i class="fa-solid fa-cart-shopping"></i
-                ><span><a href="checkout.html">Cart</a></span>
-              </li>
-            </ul>
-          </nav>
-        </header>
-        <main>
-            <div class="checkout-main">
-                <h1>Checkout</h1>
-                <div id="cart-items-display">
-                    <button id="clear-cart">Clear Cart</button>
-                </div>
-                <form action="/submit" method="post" enctype="multipart/form-data">
-                    <div class="shopping-cart">
-                        <h2>Shipping Address</h2>
-                        <div class="input-group">
-                            <div class="input-box">
-                                <input type="text" placeholder="First Name" required class="name" autofocus>
-                            </div>
-                            <div class="input-box">
-                                <input type="text" placeholder="Last Name" required class="name">
-                            </div>
-                            <div class="input-box">
-                                <input type="text" placeholder="Address" required class="name">
-                            </div>                                
-                            <div class="input-box">
-                                <input type="text" placeholder="Country" required class="name">
-                            </div>                
-                            <div class="input-box">
-                                <input type="text" placeholder="State/Region" required class="name">
-                            </div>                               
-                            <div class="input-box">
-                                <input type="text" placeholder="City" required class="name">
-                            </div>
-                            <div class="input-box">
-                                <input type="text" placeholder="Zip/Postal Code"  required class="name">
-                            </div>                               
-                            <div class="input-box">
-                                <input type="tel" placeholder="Phone Number" required class="name">
-                            </div>
-                            <div class="input-box">
-                                <input type="email" placeholder="Email Address" required class="name">
-                            </div>
-                        </div>
-                        <div class="payment-method">
-                            <h2>Choose Payment Method</h2>
-                            <input type="radio" id="paypal" name="pay"
-                            class="radio">
-                            <label for="paypal"><span><i class="fa-brands fa-cc-paypal"></i> PayPal</span></label>
-                            <input type="radio" id="card" name="pay" checked class="radio">
-                            <label for="card"><span><i class="fa-regular fa-credit-card"></i> Credit Card</span></label>
-                            <div class="input-group">
-                                <div class="input-box">
-                                    <input type="text" placeholder="Cardholders Name" required class="name" autofocus>
-                                </div>
-                                <div class="input-box">
-                                    <input type="tel" placeholder="Card Number" required class="name">
-                                </div>
-                                <div class="input-box">
-                                    <input type="tel" placeholder="CVC" required class="name">
-                                </div>
-                            <div class="input-box">
-                                <select name="dd" id="dd">
-                                    <option value="day">01 jun</option>
-                                    <option value="day">02 jun</option>
-                                    <option value="day">03 jun</option>
-                                    <option value="day">04 jun</option>
-                                    <option value="day">05 jun</option>
-                                </select>
-                                <select name="yy" id="yy">
-                                    <option value="year">2025</option>
-                                    <option value="year">2026</option>
-                                    <option value="year">2027</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="input-group">
-                            <div class="input-box">
-                                <button type="submit">Confirm Purchase</button>
-                            </div>
-                        </div>
-                    </div>
-                </form>
+            <div class="input-box">
+              <input
+                type="text"
+                placeholder="Last Name"
+                required
+                class="name"
+              />
             </div>
-        </main>
-        <footer>
-            <nav>
-                <ul class="footer">
-                    <img src="https://i.ibb.co/QrtYPzF/rd-bottom-logo.png" alt="" />
-                    <li><a href="about-us.html">about us</a></li>
-                    <li><a href="contact-us.html">contact us</a></li>
-                    <li><a href="#">terms of service</a></li>
-                    <li><h6>&copy; Rainydays 2023</h6></li>
-                </ul>
-            </nav>
-        </footer>
-    </body>
+            <div class="input-box">
+              <input type="text" placeholder="Address" required class="name" />
+            </div>
+            <div class="input-box">
+              <input type="text" placeholder="Country" required class="name" />
+            </div>
+            <div class="input-box">
+              <input
+                type="text"
+                placeholder="State/Region"
+                required
+                class="name"
+              />
+            </div>
+            <div class="input-box">
+              <input type="text" placeholder="City" required class="name" />
+            </div>
+            <div class="input-box">
+              <input
+                type="text"
+                placeholder="Zip/Postal Code"
+                required
+                class="name"
+              />
+            </div>
+            <div class="input-box">
+              <input
+                type="tel"
+                placeholder="Phone Number"
+                required
+                class="name"
+              />
+            </div>
+            <div class="input-box">
+              <input
+                type="email"
+                placeholder="Email Address"
+                required
+                class="name"
+              />
+            </div>
+          </div>
+          <div class="payment-method">
+            <h2>Choose Payment Method</h2>
+            <input type="radio" id="paypal" name="pay" class="radio" />
+            <label for="paypal"
+              ><span><i class="fa-brands fa-cc-paypal"></i> PayPal</span></label
+            >
+            <input type="radio" id="card" name="pay" checked class="radio" />
+            <label for="card"
+              ><span
+                ><i class="fa-regular fa-credit-card"></i> Credit Card</span
+              ></label
+            >
+            <div class="input-group">
+              <div class="input-box">
+                <input
+                  type="text"
+                  placeholder="Cardholders Name"
+                  required
+                  class="name"
+                  autofocus
+                />
+              </div>
+              <div class="input-box">
+                <input
+                  type="tel"
+                  placeholder="Card Number"
+                  required
+                  class="name"
+                />
+              </div>
+              <div class="input-box">
+                <input type="tel" placeholder="CVC" required class="name" />
+              </div>
+              <div class="input-box">
+                <select name="dd" id="dd">
+                  <option value="day">01 jun</option>
+                  <option value="day">02 jun</option>
+                  <option value="day">03 jun</option>
+                  <option value="day">04 jun</option>
+                  <option value="day">05 jun</option>
+                </select>
+                <select name="yy" id="yy">
+                  <option value="year">2025</option>
+                  <option value="year">2026</option>
+                  <option value="year">2027</option>
+                </select>
+              </div>
+            </div>
+            <div class="input-group">
+              <div class="input-box">
+                <button type="submit">Confirm Purchase</button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </main>
+    <footer>
+      <nav>
+        <ul class="footer">
+          <img src="https://i.ibb.co/QrtYPzF/rd-bottom-logo.png" alt="" />
+          <li><a href="about-us.html">about us</a></li>
+          <li><a href="contact-us.html">contact us</a></li>
+          <li><a href="#">terms of service</a></li>
+          <li><h6>&copy; Rainydays 2023</h6></li>
+        </ul>
+      </nav>
+    </footer>
+  </body>
 </html>
