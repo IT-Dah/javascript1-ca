@@ -1,6 +1,10 @@
-export function addToCart(jacket) {
-
+function getCart() {
     const cart = JSON.parse(localStorage.getItem('cart'));
+    return cart;
+}
+
+export function addToCart(jacket) {
+    const cart = getCart();
 
     const itemIndex = cart.findIndex(function (currentJacket) {
         console.log(currentJacket);
@@ -18,11 +22,38 @@ export function addToCart(jacket) {
     localStorage.setItem('cart', JSON.stringify(cart));
 }
 
+export function removeFromCart(jacket) {
+
+    const cart = getCart();
+    console.log('Decrement og remove product');
+    
+    const jacketIdToRemove = jacket.id;
+    console.log("Jacket id to remove", jacketIdToRemove);
+
+    const idInCart = cart.findIndex(currentItem => {
+        if (currentItem.id === jacketIdToRemove) {
+            return true;
+        }
+        return false;
+    });
+        
+    if (cart[idInCart].quantity >1) {
+    cart[idInCart].quantity -= 1;
+    localStorage.setItem('cart', JSON.stringify(cart));
+    } else {
+        console.log('delete me');
+        const newCart = cart.filter((_, index) => {
+            if (idInCart === index) {
+                return false;
+            }
+            return true;
+        });
+        localStorage.setItem('cart', JSON.stringify(newCart));
+    }
+    
+}
+
 export function clearCart() {
     localStorage.setItem('cart', JSON.stringify([]));
     console.log('Cart has been cleared');
-}
-
-export function removeFromCart(jacket) {
-    console.log('Decrement og remove product')
 }

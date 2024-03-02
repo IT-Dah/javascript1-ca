@@ -1,4 +1,5 @@
 import { addToCart, clearCart, removeFromCart } from './cart.mjs';
+import { formatCurrency } from './formatCurrency.mjs';
 
 const clearCartButton = document.getElementById('clear-cart');
 clearCartButton.addEventListener('click', () => {
@@ -23,7 +24,7 @@ function generateHtmlForJacket(jacket) {
     jacketPrice.textContent = 'Price: ' + jacket.price;
   
     const jacketPriceTotal = document.createElement ('div');
-    jacketPriceTotal.textContent = 'Total: ' + jacket.price * jacket.quantity;
+    jacketPriceTotal.textContent = 'Total: ' + formatCurrency(jacket.price * jacket.quantity);
 
     const quantityAdjustmentContainer = document.createElement('div');
 
@@ -39,6 +40,7 @@ function generateHtmlForJacket(jacket) {
     decrementButton.textContent = "-";
     decrementButton.addEventListener('click', () => {
         removeFromCart(jacket);
+        displayCartItems();
 
     })
 
