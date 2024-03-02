@@ -1,4 +1,4 @@
-import { addToCart, clearCart, removeFromCart } from './cart.mjs';
+import { addToCart, clearCart, getCart, getTotalNumberOfItemsInCart, removeFromCart } from './cart.mjs';
 import { formatCurrency } from './formatCurrency.mjs';
 
 const clearCartButton = document.getElementById('clear-cart');
@@ -34,15 +34,14 @@ function generateHtmlForJacket(jacket) {
     incrementButton.addEventListener('click', () => {
         console.log('Increment the total');
         addToCart(jacket);
-        displayCartItems();
+        renderCheckoutPage();
     })
 
     const decrementButton = document.createElement('button');
     decrementButton.textContent = "-";
     decrementButton.addEventListener('click', () => {
         removeFromCart(jacket);
-        displayCartItems();
-
+        renderCheckoutPage();
     })
 
     quantityAdjustmentContainer.append(incrementButton, decrementButton);
@@ -51,7 +50,6 @@ function generateHtmlForJacket(jacket) {
 
     return jacketDisplay;
   }
-
 
 function displayCartItems () {
 
@@ -66,9 +64,20 @@ function displayCartItems () {
     });
 }
 
+function displayCartCounter() {
+    const cartCounterContainer = document.getElementById('cart-counter');
+    console.log(cartCounterContainer);
+    const totalNumberOfItems = getTotalNumberOfItemsInCart();
+    cartCounterContainer.textContent = totalNumberOfItems;
+}
+
+function renderCheckoutPage () {
+    displayCartCounter();
+    displayCartItems();
+}
 
 function main() {
-    displayCartItems();
+    renderCheckoutPage();
 }
 
 main();

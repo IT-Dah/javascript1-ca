@@ -1,4 +1,4 @@
-function getCart() {
+export function getCart() {
     const cart = JSON.parse(localStorage.getItem('cart'));
     return cart;
 }
@@ -25,9 +25,7 @@ export function addToCart(jacket) {
 export function removeFromCart(jacket) {
 
     const cart = getCart();
-    
     const jacketIdToRemove = jacket.id;
-
     const idInCart = cart.findIndex(currentItem => {
         if (currentItem.id === jacketIdToRemove) {
             return true;
@@ -48,9 +46,19 @@ export function removeFromCart(jacket) {
         });
         localStorage.setItem('cart', JSON.stringify(newCart));
     }
-    
 }
 
 export function clearCart() {
     localStorage.setItem('cart', JSON.stringify([]));
+}
+
+export function getTotalNumberOfItemsInCart() {
+    const cart = getCart();
+    const getTotalNumberOfItemsInCart = cart.reduce((total, item) => {
+        console.log(total);
+        console.log(item);
+        total += item.quantity;
+        return total;
+    }, 0);
+    return getTotalNumberOfItemsInCart;
 }

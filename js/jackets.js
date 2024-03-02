@@ -15,7 +15,6 @@ function createCart() {
     }
 }
 
-// JACKET PAGE CONTENT:
 function generateJacketHtml(jacket) {
 
     const jacketDisplay = document.createElement('div');
