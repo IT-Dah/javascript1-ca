@@ -172,8 +172,14 @@ h5 {
 
 /* Listed Products Page */
 
+.filter-buttons {
+  margin: 0px 0px 0px 30px;
+  max-width: 150px;
+  max-height: 24px;
+}
+
 #clear-cart {
-  margin: 5px 30px;
+  margin: 0px 0px 0px 30px;
   max-width: 150px;
   max-height: 24px;
 }
@@ -376,6 +382,40 @@ h5 {
   padding-top: 3%;
   padding-right: 15%;
   text-align: right;
+}
+
+/* Purchace success */
+
+.checkout-success {
+  display: flex;
+  flex-direction: column;
+}
+
+.checkout-success i {
+  margin-top: 50px;
+  margin-bottom: 70px;
+  display: block;
+  align-self: center;
+  font-size: 800%;
+}
+
+.checkout-success h1 {
+  justify-content: center;
+  text-align: center;
+  margin: 50px;
+}
+
+.checkout-success p {
+  justify-content: center;
+  text-align: center;
+  margin: 5px;
+}
+
+.checkout-success button {
+  margin-top: 50px;
+  display: block;
+  max-width: 250px;
+  align-self: center;
 }
 
 @media screen and (max-width: 1200px) {

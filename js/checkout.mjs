@@ -51,6 +51,8 @@ function generateHtmlForJacket(jacket) {
     return jacketDisplay;
   }
 
+
+  
 function displayCartItems () {
 
     const displayContainer = document.getElementById('cart-items-display');

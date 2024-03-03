@@ -2,6 +2,27 @@ import { API_RAINYDAYS_URL } from './constants.mjs';
 import { doFetch } from './doFetch.mjs';
 import { addToCart, clearCart } from './cart.mjs';
 
+const genderMale = document.getElementById('for-him');
+const genderFemale = document.getElementById('for-her');
+const clearFilter = document.getElementById('clear-filter');
+
+let chosenGender = '';
+
+genderMale.addEventListener('click', () => {
+    chosenGender = 'Male';
+    renderHomePage();
+});
+
+genderFemale.addEventListener('click', () => {
+    chosenGender = 'Female';
+    renderHomePage();
+});
+
+clearFilter.addEventListener('click', () => {
+    chosenGender = '';
+    renderHomePage();
+});
+
 const clearCartButton = document.getElementById('clear-cart');
 clearCartButton.addEventListener('click', () => {
     clearCart();
@@ -53,24 +74,33 @@ function generateJacketHtml(jacket) {
     return jacketDisplay;
 
 }
- 
+
+
+
 function displayJackets(jackets) {
-
-    const jacketDisplayContainer = document.getElementById('jacket-display')
-
-    jackets.forEach((jacket) => {
-        const jacketHtml = generateJacketHtml(jacket);
-        jacketDisplayContainer.appendChild(jacketHtml);
-    });
+    const jacketDisplayContainer = document.getElementById('jacket-display');
+    jacketDisplayContainer.textContent = '';
+    jackets
+        .filter((jacket) => {
+            if (jacket.gender === chosenGender || chosenGender === '') {
+                return true;
+            }
+        })
+        .forEach((jacket) => {
+            const jacketHtml = generateJacketHtml(jacket);
+            jacketDisplayContainer.appendChild(jacketHtml);
+        });
 }
 
-async function main() {
-
-    createCart ();
+async function renderHomePage() {
     const responseData = await doFetch(API_RAINYDAYS_URL);
     const jackets = responseData.data;
     displayJackets(jackets);
+}
 
-  }
+async function main() {
+    createCart ();
+    await renderHomePage ();
+}
 
   main();
