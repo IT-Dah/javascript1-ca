@@ -51,6 +51,9 @@ function generateJacketHtml(jacket) {
     jacketImage.src = jacket.image.url;
     jacketImage.alt = jacket.title;
     jacketImage.classList.add('jacket-image');
+    jacketImage.addEventListener('click', () => {
+        window.location.href = "product.html"
+    })
 
     const jacketPriceContainer = document.createElement('div');
 
@@ -62,7 +65,6 @@ function generateJacketHtml(jacket) {
 
     const jacketBuyButton = document.createElement('button');
     jacketBuyButton.textContent = "Buy";
-    // Is this for CSS only? jacketBuyButton.classList.add('jacket-buy-button');
     jacketBuyButton.addEventListener('click', () => {
         addToCart(jacket);
     });
@@ -74,8 +76,6 @@ function generateJacketHtml(jacket) {
     return jacketDisplay;
 
 }
-
-
 
 function displayJackets(jackets) {
     const jacketDisplayContainer = document.getElementById('jacket-display');
