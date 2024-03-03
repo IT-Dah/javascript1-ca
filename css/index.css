@@ -147,27 +147,76 @@ h5 {
   list-style: none;
 }
 
-.pic-gallery {
+.pic-gallery ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.carousel {
+  width: 100%;
+  position: relative;
+}
+
+.carousel ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.slides {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  list-style: none;
   display: flex;
   justify-content: center;
   align-items: center;
-  max-width: fit-content;
-  padding: 2rem 3.2rem 7rem;
+  inset: 0;
+  top: auto;
+  bottom: auto;
+  opacity: 0;
 }
 
-.gallery-container {
-  display: flex;
-  justify-content: left;
-  align-items: center;
-  overflow-x: scroll;
-  width: 85%;
-  border-right: 1px solid #0a3641;
-  border-left: 1px solid #0a3641;
-  white-space: nowrap;
+.slides img {
+  display: block;
+  width: 50%;
+  margin-bottom: 100px;
 }
 
-.gallery-container img {
-  max-width: 49%;
+.slides[data-active] {
+  opacity: 1;
+}
+
+.carousel-button {
+  position: absolute;
+  z-index: 2;
+  background: none;
+  border: none;
+  border-radius: 50%;
+  font-size: 4rem;
+  margin-top: 8%;
+  margin-bottom: 50px;
+  color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.carousel-button:hover,
+.carousel-button:focus {
+  color: #f6f6f6;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.carousel-button:focus {
+  outline: 1px solid #0a3641;
+}
+
+.carousel-button.prev {
+  left: 10%;
+}
+
+.carousel-button.next {
+  right: 10%;
 }
 
 /* Listed Products Page */
@@ -418,7 +467,7 @@ h5 {
   align-self: center;
 }
 
-@media screen and (max-width: 1200px) {
+/* @media screen and (max-width: 1200px) {
   .product-details {
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 0.1fr 2fr 2fr 1fr 1fr;
@@ -453,7 +502,7 @@ h5 {
     margin: auto;
   }
 
-  .gallery-container {
+  .slides {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
@@ -466,9 +515,9 @@ h5 {
     border-left: none;
   }
 
-  .gallery-container img {
+  .slides img {
     display: block;
     max-width: 80%;
     margin: auto;
   }
-}
+} */

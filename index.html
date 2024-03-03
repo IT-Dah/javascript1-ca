@@ -5,6 +5,7 @@
     <meta name="description" content="we sell quality rain jackets" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script type="module" src="./js/jackets.js"></script>
+    <script type="module" src="./js/image-carousel.mjs"></script>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
@@ -39,45 +40,61 @@
       </nav>
     </header>
     <main>
-      <div class="content-wrapper">
-        <div class="intro">
-          <h1>
-            Revamp your <span class="special-word">style!</span> Stay
-            <span class="special-word">comfortable</span> in any weather.
-          </h1>
-        </div>
-        <nav>
-          <ul class="for-them">
-            <h3>
-              <li><a href="jackets.html"> Our Jackets</a></li>
-            </h3>
-          </ul>
-        </nav>
-        <div class="pic-gallery">
-          <div class="gallery-container">
-            <img
-              src="https://i.ibb.co/KsQ360K/hiking-slider1.jpg"
-              alt="happy friends on a hike in the mountains"
-            />
-            <img
-              src="https://i.ibb.co/qjmxhJF/sunset-walk1.jpg"
-              alt="two friends walking their dogs in the sunset"
-            />
-            <img
-              src="https://i.ibb.co/QNzF9fN/happy-rain-slider1.jpg"
-              alt="woman spreading her arms, enjoying the rain"
-            />
-            <img
-              src="https://i.ibb.co/34rsqTy/happy-dog-slider1.jpg"
-              alt="smiling woman getting kisses from her puppy"
-            />
-            <img
-              src="https://i.ibb.co/cLqy519/playful-people1.jpg"
-              alt="happy couple playing the rain"
-            />
-          </div>
-        </div>
+      <div class="intro">
+        <h1>
+          Revamp your <span class="special-word">style!</span> Stay
+          <span class="special-word">comfortable</span> in any weather.
+        </h1>
       </div>
+      <nav>
+        <ul class="for-them">
+          <h3>
+            <li><a href="jackets.html"> Our Jackets</a></li>
+          </h3>
+        </ul>
+      </nav>
+      <section class="pic-gallery">
+        <div class="carousel" data-carousel>
+          <button class="carousel-button prev" data-carousel-button="prev">
+            <i class="fa-solid fa-circle-arrow-left"></i>
+          </button>
+          <button class="carousel-button next" data-carousel-button="next">
+            <i class="fa-solid fa-circle-arrow-right"></i>
+          </button>
+          <ul data-slides>
+            <li class="slides" data-active>
+              <img
+                src="https://i.ibb.co/KsQ360K/hiking-slider1.jpg"
+                alt="happy friends on a hike in the mountains"
+              />
+            </li>
+            <li class="slides">
+              <img
+                src="https://i.ibb.co/qjmxhJF/sunset-walk1.jpg"
+                alt="two friends walking their dogs in the sunset"
+              />
+            </li>
+            <li class="slides">
+              <img
+                src="https://i.ibb.co/QNzF9fN/happy-rain-slider1.jpg"
+                alt="woman spreading her arms, enjoying the rain"
+              />
+            </li>
+            <li class="slides">
+              <img
+                src="https://i.ibb.co/34rsqTy/happy-dog-slider1.jpg"
+                alt="smiling woman getting kisses from her puppy"
+              />
+            </li>
+            <li class="slides">
+              <img
+                src="https://i.ibb.co/cLqy519/playful-people1.jpg"
+                alt="happy couple playing the rain"
+              />
+            </li>
+          </ul>
+        </div>
+      </section>
     </main>
     <footer>
       <nav>
